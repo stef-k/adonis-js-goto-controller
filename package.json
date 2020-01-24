@@ -57,10 +57,10 @@
 		"tslint": "^6.0.0",
 		"vscode-test": "^1.2.2",
 		"@types/n-readlines": "^1.0.0",
-		"@types/node": "^13.5.0"
+		"@types/node": "^13.5.0",
+		"vscode": "^1.1.36"
 	},
 	"dependencies": {
-		"n-readlines": "^1.0.0",
-		"vscode": "^1.1.36"
+		"n-readlines": "^1.0.0"
 	}
 }
