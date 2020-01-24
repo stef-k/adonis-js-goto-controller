@@ -7,7 +7,6 @@ import * as util from './util';
 const REG = /(['"])[^'"]*\1/;
 
 export function activate(context: ExtensionContext) {
-	console.log('Adonis JS goto controller activated')
 	let hover = languages.registerHoverProvider('javascript', {
 			provideHover(document, position, token) {
 					let linkRange = document.getWordRangeAtPosition(position, REG);

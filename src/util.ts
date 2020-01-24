@@ -2,6 +2,7 @@
 
 import { workspace, TextDocument, DocumentLink, Range, Uri } from 'vscode';
 import * as fs from 'fs';
+// @ts-ignore
 import * as readLine from 'n-readlines';
 
 export class AdonisJSControllerLink extends DocumentLink {
@@ -9,6 +10,7 @@ export class AdonisJSControllerLink extends DocumentLink {
   funcName: string;
   controllerName: string;
   constructor(range: Range, path: string, controllerName: string, funcName: string) {
+    // @ts-ignore
     super(range, null);
     this.filePath = path;
     this.controllerName = controllerName;
@@ -24,6 +26,7 @@ export class AdonisJSControllerLink extends DocumentLink {
 export function getFilePath(text: string, document: TextDocument) {
   let pathCtrl = '/app/Controllers'; // initial pathController value in package.json
   pathCtrl = workspace.getConfiguration('adonis_js_goto_controller').pathController; // default settings or user settings
+  // @ts-ignore
   let filePath = workspace.getWorkspaceFolder(document.uri).uri.fsPath + pathCtrl;
   // split the method (if not a resource controller) from the controller name
   // check first for js extension
