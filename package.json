@@ -1,0 +1,65 @@
+{
+	"name": "adonis-js-goto-controller",
+	"displayName": "Adonis JS Goto Controller",
+	"description": "Alt + click to navigate from a route to a respective controller",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"galleryBanner": {
+		"color": "#220052",
+		"theme": "light"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stef-k/adonis-js-goto-controller.git"
+	},
+	"bugs": {
+		"url": "https://github.com/stef-k/adonis-js-goto-controller/issues"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Adonis JS goto controller configuration",
+			"properties": {
+				"adonis_js_goto_controller.pathController": {
+					"type": "string",
+					"default": "/app/Controllers",
+					"description": "Root path to the controllers folder"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"typescript": "^3.6.4",
+		"tslint": "^6.0.0",
+		"vscode-test": "^1.2.2",
+		"@types/n-readlines": "^1.0.0",
+		"@types/node": "^13.5.0"
+	},
+	"dependencies": {
+		"n-readlines": "^1.0.0",
+		"vscode": "^1.1.36"
+	}
+}
