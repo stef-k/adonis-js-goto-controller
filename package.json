@@ -2,13 +2,20 @@
 	"name": "adonis-js-goto-controller",
 	"displayName": "Adonis JS Goto Controller",
 	"description": "Alt + click to navigate from a route to a respective controller",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "stef-k",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
 	"categories": [
 		"Other"
+	],
+	"keywords": [
+		"AdonisJS",
+		"JS",
+		"JavaScript",
+		"TS",
+		"Typescript"
 	],
 	"galleryBanner": {
 		"color": "#220052",
