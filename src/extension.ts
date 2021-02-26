@@ -7,7 +7,7 @@ import * as util from './util';
 const REG = /(['"])[^'"]*\1/;
 
 export function activate(context: ExtensionContext) {
-	let hover = languages.registerHoverProvider('javascript', {
+	let hover = languages.registerHoverProvider(['typescript', 'javascript'], {
 			provideHover(document, position, token) {
 					let linkRange = document.getWordRangeAtPosition(position, REG);
 					if (linkRange) {
@@ -20,7 +20,7 @@ export function activate(context: ExtensionContext) {
 					return;
 			}
 	});
-	let link = languages.registerDocumentLinkProvider('javascript', new LinkProvider());
+	let link = languages.registerDocumentLinkProvider(['typescript', 'javascript'], new LinkProvider());
 	context.subscriptions.push(hover);
 	context.subscriptions.push(link);
 }
