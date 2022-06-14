@@ -1,6 +1,17 @@
 'use strict';
 
-import { workspace, Position, Range, CancellationToken, DocumentLink, DocumentLinkProvider, TextDocument, Uri, ProviderResult, commands } from 'vscode';
+import { 
+  workspace, 
+  Position, 
+  Range, 
+  CancellationToken, 
+  DocumentLink, 
+  DocumentLinkProvider, 
+  TextDocument, 
+  Uri, 
+  ProviderResult, 
+  window 
+} from 'vscode';
 import * as util from './util'
 
 export class LinkProvider implements DocumentLinkProvider {
@@ -52,6 +63,9 @@ export class LinkProvider implements DocumentLinkProvider {
     let path = link.filePath;
     if (lineNum !== -1) {
       path += "#" + lineNum;
+    } else {
+      const showNoMethodMessage = workspace.getConfiguration('adonis_js_goto_controller').showNoMethodMessage;
+      if (showNoMethodMessage) window.showWarningMessage(`The method ${link.funcName} does not exist in the ${link.controllerName}`);
     }
 
     link.target = Uri.parse("file:" + path);
