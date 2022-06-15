@@ -43,6 +43,11 @@
 					"type": "string",
 					"default": "/app/Controllers",
 					"description": "Root path to the controllers folder"
+				},
+				"adonis_js_goto_controller.showNoMethodMessage": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show a message when no method is found"
 				}
 			}
 		}
